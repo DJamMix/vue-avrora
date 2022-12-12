@@ -1,30 +1,24 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav class="nav">
+    <div class="nav_blocklogo">
+      <a href="#"><img src="./assets/img/logo.svg" alt="Логотип"></a>
+    </div>
+    <div class="nav_block-menu">
+      <a class="nav_block-menu_item" href="#">Главная</a>
+      <a class="nav_block-menu_item" href="#">Правила</a>
+    </div>
+    <div>
+      <a href="#"><img src="./assets/img/icon-vk.svg" alt="Перейти в группу Вконтакте"></a>
+      <a href="#"><img src="./assets/img/icon-youtube.svg" alt="Перейти на канал Ютуб"></a>
+      <a href="#"><img src="./assets/img/icon-discord.svg" alt="Перейти в Discord"></a>
+    </div>
+    <div>
+      <a href="#"><img src="./assets/img/icon-lk.svg" alt="Личный кабинет"><p>Личный кабинет</p></a>
+    </div>
   </nav>
   <router-view/>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  @import "assets/css/style.css";
 </style>

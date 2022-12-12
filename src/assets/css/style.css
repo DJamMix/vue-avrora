@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Montserrat-regular';
+    src: url(../fonts/ofont.ru_Montserrat.ttf);
+}
+@font-face {
+    font-family: 'Montserrat-bold';
+    src: url(../fonts/ofont.ru_Montserrat_bold.ttf);
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.nav_blocklogo{
+    margin-right: 184px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.nav_block-menu_item{
+    text-decoration: none;
+    font-family: 'Montserrat-regular';
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
