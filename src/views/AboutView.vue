@@ -1,5 +1,15 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <RulesComponent/>
   </div>
 </template>
+
+<script>
+  import RulesComponent from '../components/Rules/RulesComponent.vue'
+export default {
+  name: 'AboutView',
+  components: {
+    RulesComponent
+  }
+}
+</script>
