@@ -7,15 +7,23 @@
     src: url(../fonts/ofont.ru_Montserrat_bold.ttf);
 }
 .nav{
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .nav_blocklogo{
-    margin-right: 184px;
     margin-top: 40px;
     margin-bottom: 40px;
+    transition: 0.2s;
+}
+.nav_blocklogo:active,
+.nav_blocklogo:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
 .nav_block-menu_item{
     text-decoration: none;
@@ -24,4 +32,58 @@
     font-weight: 500;
     font-size: 15px;
     line-height: 18px;
+    padding-bottom: 44px;
+    transition: 0.2s;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.nav_block-menu_item:active,
+.nav_block-menu_item:hover{
+    border-bottom: 8px solid;
+    border-image-source: linear-gradient(90deg, #FFDD00, #FBB034);
+    border-image-slice: 1;
+    transition: 0.2s;
+}
+.nav_social-block_item{
+    margin-left: 17px;
+    margin-right: 17px;
+    transition: 0.2s;
+}
+.nav_social-block_item:active,
+.nav_social-block_item:hover{
+    opacity: 0.7;
+    transition: 0.2s;
+}
+.nav_pers-account-block_link{
+    background-color: #1BD850;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    padding-right: 8px;
+    transition: 0.2s;
+}
+.nav_pers-account-block_link:active,
+.nav_pers-account-block_link:hover{
+    box-shadow:
+      1px 1px #35CD5F,
+      2px 2px #35CD5F,
+      3px 3px #35CD5F,
+      4px 4px #35CD5F,
+      5px 5px #35CD5F;
+    -webkit-transform: translateX(-7px);
+    transform: translateX(-7px);
+    transition: 0.2s;
+}
+.nav_pers-account-block_link_content{
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
+    font-family: 'Montserrat-regular';
+    text-align: center;
+    margin-left: 9px;
+}
+.nav_pers-account-block_link_img{
+    padding: 10px;
+    background-color: #35CD5F;
 }
