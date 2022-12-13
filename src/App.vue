@@ -4,8 +4,8 @@
       <router-link to="/"><img src="./assets/img/logo.svg" alt="Логотип"></router-link>
     </div>
     <div class="nav_block-menu">
-      <router-link to="/" class="nav_block-menu_item">Главная</router-link>
-      <router-link to="/about" class="nav_block-menu_item">Правила</router-link>
+      <router-link active-class="nav_block-menu_item-active" to="/" class="nav_block-menu_item">Главная</router-link>
+      <router-link active-class="nav_block-menu_item-active" to="/about" class="nav_block-menu_item">Правила</router-link>
     </div>
     <div class="nav_social-block">
       <a class="nav_social-block_item" href="#"><img src="./assets/img/icon-vk.svg" alt="Перейти в группу Вконтакте"></a>
@@ -21,6 +21,16 @@
   </nav>
   <router-view/>
 </template>
+
+<script>
+import Banner from './components/Main/Banner.vue'
+
+export default {
+  components: {
+    Banner
+  }
+}
+</script>
 
 <style>
   @import "assets/css/style.css";

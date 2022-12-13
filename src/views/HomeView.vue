@@ -1,14 +1,16 @@
 <template>
-  <div class="home">
-    1234
-    ghbdtn
-  </div>
+
+  <Banner />
+
 </template>
 
 <script>
+import Banner from '../components/Main/Banner.vue'
+
 export default {
   name: 'HomeView',
   components: {
+    Banner
   }
 }
 </script>
