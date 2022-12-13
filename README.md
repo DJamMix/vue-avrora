@@ -1,19 +1,10 @@
-# vue-avroraraft
+# Макет сайта AvroraCraft v0.1
 
-## Project setup
-```
-npm install
-```
+## О проекте
+Макет создан при инициативе администрации студии [NETHERSTUDIO](https://vk.com/nether_studio). Макет полностью бесплатный создан для демонстрации работ для NetherStudio, но в данном макете не будет присутсвовать система оплаты доната, подключение к серверу и выдача доната на сервере. Чтобы заказать свой сайт пишите в нашу группу вконтакте - [NETHERSTUDIO](https://vk.com/nether_studio).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Разработчики проекта
+[DJamMix](https://github.com/DJamMix)
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Присоединяйся к нам!
+Проект создан при поддержке [NETHERSTUDIO](https://vk.com/nether_studio).
