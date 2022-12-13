@@ -7,6 +7,7 @@
 
 ### Разработчики проекта
 [DJamMix](https://github.com/DJamMix)
+[wkyren](https://github.com/wkyren)
 
 ### Присоединяйся к нам!
 Проект создан при поддержке [NETHERSTUDIO](https://vk.com/nether_studio).

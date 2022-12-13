@@ -19,7 +19,27 @@
       </a>
     </div>
   </nav>
+
   <router-view/>
+
+  <footer class="footer">
+    <div class="footer_blocklogo">
+      <router-link to="/"><img src="./assets/img/logo-gray.svg" alt="Логотип"></router-link>
+    </div>
+    <div class="footer-block-menu">
+      <router-link active-class="footer_block-menu_item-active" to="/" class="footer_block-menu_item">Главная</router-link>
+      <router-link active-class="footer_block-menu_item-active" to="/about" class="footer_block-menu_item">Правила</router-link>
+    </div>
+    <div class="nav_social-block">
+      <a class="nav_social-block_item" href="#"><img src="./assets/img/icon-vk.svg" alt="Перейти в группу Вконтакте"></a>
+      <a class="nav_social-block_item" href="#"><img src="./assets/img/icon-youtube.svg" alt="Перейти на канал Ютуб"></a>
+      <a class="nav_social-block_item" href="#"><img src="./assets/img/icon-discord.svg" alt="Перейти в Discord"></a>
+    </div>
+    <div>
+      <p>Разработка сайта</p>
+      <a href="#">NETHER STUDIO</a>
+    </div>
+  </footer>
 </template>
 
 <script>

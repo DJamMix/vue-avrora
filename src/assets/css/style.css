@@ -10,6 +10,9 @@
     font-family: 'Montserrat-bold';
     src: url(../fonts/ofont.ru_Montserrat_bold.ttf);
 }
+
+/*Навигация сайта*/
+
 .nav{
     max-width: 1200px;
     margin: auto;
@@ -97,4 +100,50 @@
 .nav_pers-account-block_link_img{
     padding: 10px;
     background-color: #35CD5F;
+}
+
+/*Подвал сайта*/
+
+footer{
+    background-color: black;
+    background-size: 100% 185px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 185px;
+    padding-left: 15px;
+}
+.footer_blocklogo{
+    transition: 0.2s;
+}
+.footer_blocklogo:active,
+.footer_blocklogo:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.footer_block-menu_item{
+    text-decoration: none;
+    font-family: 'Montserrat-regular';
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 10px;
+    transition: 0.2s;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 10px;
+}
+.footer_block-menu_item:active,
+.footer_block-menu_item:hover{
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+}
+.footer_block-menu_item-active{
+    background-color: white;
+    color: black;
+    transition: 0.2s;
 }
