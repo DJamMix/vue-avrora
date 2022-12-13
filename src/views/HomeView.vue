@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     1234
+    ghbdtn
   </div>
 </template>
 
