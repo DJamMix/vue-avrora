@@ -10,6 +10,10 @@
     font-family: 'Montserrat-bold';
     src: url(../fonts/ofont.ru_Montserrat_bold.ttf);
 }
+@font-face {
+    font-family: 'Montserrat-extrabold';
+    src: url(../fonts/Montserrat-ExtraBold.ttf);
+}
 .nav{
     max-width: 1200px;
     margin: auto;
