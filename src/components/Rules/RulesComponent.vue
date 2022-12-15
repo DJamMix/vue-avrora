@@ -21,7 +21,7 @@ export default {
 <style lang="sass" scoped>
         .rules
             padding-top: 63px
-            padding-bottom: 67px
+            padding-bottom: 267px
             background: #F3F3F3
             &_rules-block
                 max-width: 1170px
