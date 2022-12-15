@@ -13,6 +13,10 @@
 
 /*Навигация сайта*/
 
+@font-face {
+    font-family: 'Montserrat-extrabold';
+    src: url(../fonts/Montserrat-ExtraBold.ttf);
+}
 .nav{
     max-width: 1200px;
     margin: auto;
