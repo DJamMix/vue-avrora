@@ -10,10 +10,17 @@
     font-family: 'Montserrat-bold';
     src: url(../fonts/ofont.ru_Montserrat_bold.ttf);
 }
+@font-face {
+    font-family: 'Montserrat-extrabold';
+    src: url(../fonts/Montserrat-ExtraBold.ttf);
+}
 
 /*Навигация сайта*/
 
-
+@font-face {
+    font-family: 'Montserrat-medium';
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
 .nav{
     max-width: 1200px;
     margin: auto;
@@ -35,7 +42,7 @@
 }
 .nav_block-menu_item{
     text-decoration: none;
-    font-family: 'Montserrat-regular';
+    font-family: 'Montserrat-medium';
     color: black;
     font-weight: 500;
     font-size: 15px;
@@ -119,6 +126,9 @@ footer{
 .black-footer{
     background-color: black;
     background-size: 100% 185px;
+    position:fixed;
+    bottom:0;
+    width: 100%;
 }
 .footer_blocklogo{
     transition: 0.2s;
