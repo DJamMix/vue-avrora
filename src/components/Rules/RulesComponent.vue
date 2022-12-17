@@ -3,7 +3,6 @@
         <div class="rules_rules-block">
             <div class="rules_rules-block_object">
                 <h2>ПРАВИЛА ПРОЕКТА<div></div></h2>
-                
             </div>
             <List />
         </div>
