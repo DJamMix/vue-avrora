@@ -10,13 +10,13 @@
     font-family: 'Montserrat-bold';
     src: url(../fonts/ofont.ru_Montserrat_bold.ttf);
 }
-
-/*Навигация сайта*/
-
 @font-face {
     font-family: 'Montserrat-extrabold';
     src: url(../fonts/Montserrat-ExtraBold.ttf);
 }
+
+/*Навигация сайта*/
+
 .nav{
     max-width: 1200px;
     margin: auto;
@@ -122,6 +122,9 @@ footer{
 .black-footer{
     background-color: black;
     background-size: 100% 185px;
+    position:fixed;
+    bottom:0;
+    width: 100%;
 }
 .footer_blocklogo{
     transition: 0.2s;

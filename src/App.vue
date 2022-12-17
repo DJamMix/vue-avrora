@@ -13,14 +13,17 @@
       <a class="nav_social-block_item" href="#"><img src="./assets/img/icon-discord.svg" alt="Перейти в Discord"></a>
     </div>
     <div class="nav_pers-account-block">
-      <a class="nav_pers-account-block_link" href="#">
+      <router-link class="nav_pers-account-block_link" to="/auth">
         <img class="nav_pers-account-block_link_img" src="./assets/img/icon-lk.svg" alt="Личный кабинет">
         <p class="nav_pers-account-block_link_content">Личный кабинет</p>
-      </a>
+      </router-link>
     </div>
   </nav>
+  <body>
 
-  <router-view/>
+    <router-view/>
+
+  </body>
   <div class="black-footer">
     <footer class="footer">
       <div class="footer_blocklogo">
@@ -49,7 +52,7 @@ import Banner from './components/Main/Banner.vue'
 export default {
   components: {
     Banner
-  }
+  },
 }
 </script>
 
