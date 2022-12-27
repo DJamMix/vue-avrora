@@ -2,7 +2,7 @@
     <section class="rules">
         <div class="rules_rules-block">
             <div class="rules_rules-block_object">
-                <h2>ПРАВИЛА ПРОЕКТА<div></div></h2>
+                <h2>ПРАВИЛА ПРОЕКТА</h2>
             </div>
             <List />
         </div>
@@ -28,7 +28,7 @@ export default {
                 margin: auto 
                 max-width: 1170px
                 &_object
-                    padding-bottom: 62px
+                    padding-bottom: 40px
                     position: relative
                     justify-content: center
                     align-items: center
@@ -44,4 +44,5 @@ export default {
                             margin-left: 59%
                             margin-top: -3%
                             height: 16px
+
 </style>

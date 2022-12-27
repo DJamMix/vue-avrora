@@ -22,7 +22,7 @@
     src: url(../fonts/Montserrat-Medium.ttf);
 }
 .nav{
-    max-width: 1200px;
+    max-width: 1170px;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -108,6 +108,10 @@
 .nav_pers-account-block_link_img{
     padding: 10px;
     background-color: #35CD5F;
+}
+
+.nav_menu,.footer_menu,.footer_arrow {
+    display: none;
 }
 
 /*Подвал сайта*/

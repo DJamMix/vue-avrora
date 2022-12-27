@@ -18,6 +18,9 @@
         <p class="nav_pers-account-block_link_content">Личный кабинет</p>
       </router-link>
     </div>
+    <div class="nav_menu">
+        <a class="nav_menu_item-btn" href="#"><img src="./assets/img/icon-menu.svg" alt="Меню"></a>
+    </div>
   </nav>
   <body>
 
@@ -29,7 +32,7 @@
       <div class="footer_blocklogo">
         <router-link to="/"><img src="./assets/img/logo-gray.svg" alt="Логотип"></router-link>
       </div>
-      <div class="footer-block-menu">
+      <div class="footer_block-menu">
         <router-link active-class="footer_block-menu_item-active" to="/" class="footer_block-menu_item">Главная</router-link>
         <router-link active-class="footer_block-menu_item-active" to="/about" class="footer_block-menu_item">Правила</router-link>
       </div>
@@ -56,6 +59,39 @@ export default {
 }
 </script>
 
-<style>
-  @import "assets/css/style.css";
+<style lang="sass" scoped>
+@import "assets/css/style.css"
+
+//Адаптив
+@media (max-width: 1200px) 
+  .nav
+    padding-left: 15px
+    padding-right: 15px
+
+  .footer
+    padding-left: 15px
+    padding-right: 15px
+
+@media (max-width: 850px)
+    .nav
+      &_block-menu, &_social-block, &_pers-account-block_link
+        display: none
+      &_menu
+        display: block
+        &_item-btn
+          padding: 7px 9px
+          text-decoration: none
+          background: linear-gradient(309deg, rgba(251,176,52,1) 0%, rgba(255,221,0,1) 100%)
+
+    .footer
+      &_block-menu, &_social-block
+        display: none
+      &_creators
+        &_text, &_link
+          font-size: 15px
+
+@media (max-width: 440px)
+    .footer
+        flex-direction: column
+        justify-content: space-evenly
 </style>
