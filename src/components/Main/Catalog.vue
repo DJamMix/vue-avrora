@@ -74,6 +74,7 @@
                     transition: 0.2s
                     margin-right: 40px
                     margin-left: 40px
+                    cursor: pointer
                 button:hover
                     border-bottom: 11px solid 
                     border-image-source: linear-gradient(90deg, #FFDD00, #FBB034)

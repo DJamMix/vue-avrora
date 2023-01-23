@@ -2,7 +2,13 @@
     <div class="faq" id="faq">
         <div class="faq_questions-answers" v-for="questionAnswer in questionsAnswers" :key="questionAnswer.id">
             <p class="faq_questions-answers_question">{{ questionAnswer.question }}</p>
-            <div class="faq_questions-answers_answer">{{ questionAnswer.answer }}</div>
+            <div class="faq_questions-answers_answer">
+                <div class="faq_questions-answers_answer_point">
+                    <p class="faq_questions-answers_answer_point_text" v-for="answer in questionAnswer.answers" :key="answer.point">
+                        {{ answer.point }}
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -19,7 +25,7 @@ export default {
                 {
                     id: 1,
                     question: 'Основные правила проекта',
-                    answer: [
+                    answers: [
                         {
                             point: '1.1 Незнание правил не освобождает вас от ответственности.'
                         },
@@ -40,7 +46,7 @@ export default {
                 {
                     id: 2,
                     question: 'Правила игроков с привилегией',
-                    answer: [
+                    answers: [
                         {
                             point: '2.1 Ложный кик / Ложный мут / Ложный бан - Бан от 6 часов до 3 дней'
                         },
@@ -67,7 +73,7 @@ export default {
                 {
                     id: 3,
                     question: 'Защита и безопасность аккаунта',
-                    answer: [
+                    answers: [
                         {
                             point: '3.1 Игрок полностью отвечает за надёжность своего пароля и доступа к аккаунту. Не забывайте о привязке к ВК!'
                         },
@@ -90,7 +96,7 @@ export default {
     },
     mounted() {
         let accordion = document.getElementsByClassName('faq_questions-answers_question');
-
+        // console.log(accordion)
                 const element = document.getElementsByClassName('faq')[0];
             setTimeout(() => {
                 element.style.setProperty('--height', element.offsetHeight + 'px')
@@ -98,6 +104,7 @@ export default {
         for (let i = 0; i < accordion.length; i++) {
             accordion[i].addEventListener('click', () => {
                 let panel = accordion[i].parentElement.children[1];
+                console.log(panel)
                 element.style.setProperty('--height', element.offsetHeight+100 + 'px')
                 
                 if (panel.style.maxHeight) {
@@ -110,7 +117,6 @@ export default {
 
                 }
             })
-            
         }
 
         window.addEventListener('resize', () => {
@@ -147,14 +153,24 @@ export default {
                 font-size: 13px
                 justify-content: center
                 align-items: center
-                text-align: center
                 background: #fff
                 border-radius: 10px
-                margin-top: 33px
+                margin-top: 18px
                 width: 682px
                 overflow: hidden
                 max-height: 0
                 transition: max-height 0.2s ease-out
+                &_point
+                    padding: 36px
+                    &_text
+                        font-weight: 500
+                        font-size: 12px
+                        line-height: 15px
+                        text-transform: uppercase
+                        color: rgba(0, 0, 0, 0.5)
+                        margin-top: 5px
+                        margin-bottom: 5px
+
 //Адаптив
 
 @media (max-width: 850px)

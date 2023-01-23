@@ -24,6 +24,7 @@ export default {
             padding-top: 63px
             padding-bottom: 67px
             background: #F3F3F3
+            min-height: calc(100vh - 185px)
             &_rules-block
                 margin: auto 
                 max-width: 1170px
