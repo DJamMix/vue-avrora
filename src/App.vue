@@ -13,9 +13,9 @@
       <a class="nav_social-block_item" href="#"><img src="./assets/img/icon-discord.svg" alt="Перейти в Discord"></a>
     </div>
     <div class="nav_pers-account-block">
-      <router-link class="nav_pers-account-block_link" to="/auth">
+      <router-link v-if="isLoggedIn" class="nav_pers-account-block_link" to="/auth">
         <img class="nav_pers-account-block_link_img" src="./assets/img/icon-lk.svg" alt="Личный кабинет">
-        <p class="nav_pers-account-block_link_content">Личный кабинет</p>
+        <a class="nav_pers-account-block_link_content">Выйти из кабинета</a>
       </router-link>
     </div>
   </nav>
