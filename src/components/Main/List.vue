@@ -155,4 +155,14 @@ export default {
                 overflow: hidden
                 max-height: 0
                 transition: max-height 0.2s ease-out
+//Адаптив
+
+@media (max-width: 850px)
+    .faq
+        &_questions-answers
+            &_question
+                width: 75%
+            &_answer
+                width: 75%
+
 </style>

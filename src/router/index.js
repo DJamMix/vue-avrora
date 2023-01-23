@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AuthView from '../views/AuthView.vue'
 
 const routes = [
   {
@@ -21,6 +20,11 @@ const routes = [
     name: 'auth',
     component: AuthView
   },
+  {
+    path: '/adminpanel',
+    name: 'admin',
+    component: AdminPanel
+  }
 ]
 
 const router = createRouter({

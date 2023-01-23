@@ -29,6 +29,7 @@ export default {
         &_banner-block
             background-image: url(../../assets/img/banner-background.png)
             max-width: 1170px
+            border-radius: 35px
             background-size: 100% 330px
             margin: auto
             display: flex
@@ -84,4 +85,47 @@ export default {
                     font-family: 'Montserrat-regular'
                     color: #FFFFFF
                     margin-top: 5px
+
+//Адаптив
+@media (max-width: 1200px)
+    .banner
+        padding-left: 15px
+        padding-right: 15px
+                
+@media (max-width: 850px)
+    .banner
+        padding: 0
+        &_banner-block
+            padding-left: 15px
+            padding-right: 15px
+            background-size: cover
+            border-radius: 0px
+            
+@media (max-width: 680px)
+    .banner
+        &_banner-block
+            &_text-and-button
+                h1
+                    max-width: none
+            &_online-players
+                display: none
+
+@media (max-width: 615px)
+    .banner
+        &_banner-block
+            justify-content: initial
+            &_text-and-button
+                h1
+                    font-size: 25px
+                    width: 394px
+                button
+                    font-size: 10px
+
+@media (max-width: 440px)
+    .banner
+        &_banner-block
+            &_text-and-button
+                h1
+                    width: auto
+
 </style>
