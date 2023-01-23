@@ -115,7 +115,9 @@
 }
 
 /*Подвал сайта*/
-
+main{
+    min-height: calc(100vh - 185px);
+}
 footer{
     max-width: 1200px;
     margin: auto;
@@ -130,9 +132,8 @@ footer{
 .black-footer{
     background-color: black;
     background-size: 100% 185px;
-    position:fixed;
-    bottom:0;
     width: 100%;
+    height: 185px;
 }
 .footer_blocklogo{
     transition: 0.2s;

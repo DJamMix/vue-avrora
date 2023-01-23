@@ -20,9 +20,11 @@
     </div>
   </nav>
   <body>
+    <main>
 
-    <router-view/>
-
+      <router-view/>
+      
+    </main>
   </body>
   <div class="black-footer">
     <footer class="footer">
