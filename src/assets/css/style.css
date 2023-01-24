@@ -214,3 +214,7 @@ footer{
 .footer_creators_link:hover:after{
     width: 100%;
 }
+.show{
+    opacity: 1;
+    transition: 0.2s;
+}

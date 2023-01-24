@@ -1,4 +1,4 @@
-# Макет сайта AvroraCraft v0.1
+# Макет сайта AvroraCraft v0.5
 
 ## О проекте
 [![Картинка сайта](https://i.postimg.cc/Gp483rw0/ImgSite.png)](https://postimg.cc/nstcTyhT)

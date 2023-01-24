@@ -2,42 +2,15 @@
     <section class="catalog">
         <div class="catalog_block">
             <div class="catalog_block_nav">
-                <button>Привилегии</button>
-                <button class="catalog_block_nav_btn" id="case">Кейсы</button>
-                <button class="catalog_block_nav_btn" id="titles">Титулы</button>
-                <button class="catalog_block_nav_btn">Прочее</button>
+                <button @click="buttonCategory(filterCatalog.id)" class="catalog_block_nav_btn button-category" v-for="filterCatalog in filtersCatalog" :key="filterCatalog.id" :id="filterCatalog.id">{{ filterCatalog.name }}</button>
             </div>
         </div>
         <div class="catalog_listen">
-            <div class="catalog_listen_items">
+            <div class="catalog_listen_items" :id="CatalogItem.category" v-for="CatalogItem in Catalog" :key="CatalogItem.id">
                 <div class="catalog_listen_items_product">
-                    <p class="catalog_listen_items_product_name">Vip</p>
-                    <img class="catalog_listen_items_product_image" src="../../assets/img/img-vip.png" alt="#">
-                    <p class="catalog_listen_items_product_price">35 руб.</p>
-                    <p class="catalog_listen_items_product_info">подробнее</p>
-                </div>
-            </div>
-            <div class="catalog_listen_items">
-                <div class="catalog_listen_items_product">
-                    <p class="catalog_listen_items_product_name">Premium</p>
-                    <img class="catalog_listen_items_product_image" src="../../assets/img/img-premium.png" alt="#">
-                    <p class="catalog_listen_items_product_price">70 руб.</p>
-                    <p class="catalog_listen_items_product_info">подробнее</p>
-                </div>
-            </div>
-            <div class="catalog_listen_items">
-                <div class="catalog_listen_items_product">
-                    <p class="catalog_listen_items_product_name">Creative</p>
-                    <img class="catalog_listen_items_product_image" src="../../assets/img/img-creative.png" alt="#">
-                    <p class="catalog_listen_items_product_price">95 руб.</p>
-                    <p class="catalog_listen_items_product_info">подробнее</p>
-                </div>
-            </div>
-            <div class="catalog_listen_items">
-                <div class="catalog_listen_items_product">
-                    <p class="catalog_listen_items_product_name">Admin</p>
-                    <img class="catalog_listen_items_product_image" src="../../assets/img/img-admin.png" alt="#">
-                    <p class="catalog_listen_items_product_price">120 руб.</p>
+                    <p class="catalog_listen_items_product_name">{{ CatalogItem.name }}</p>
+                    <img class="catalog_listen_items_product_image" :src="CatalogItem.img" alt="Товар">
+                    <p class="catalog_listen_items_product_price">{{ CatalogItem.price }} руб.</p>
                     <p class="catalog_listen_items_product_info">подробнее</p>
                 </div>
             </div>
@@ -50,14 +23,296 @@
   export default {
     name: 'Catalog',
     components: {
+
+    },
+    data() {
+        return {
+            Catalog: [
+                {
+                    id: 1,
+                    name: 'Vip',
+                    img: "/img/img-vip.9120969a.png",
+                    price: '35',
+                    category: 'privilegesItem',
+                },
+                {
+                    id: 2,
+                    name: 'Premium',
+                    img: '/img/img-premium.44dda750.png',
+                    price: '70',
+                    category: 'privilegesItem',
+                },
+                {
+                    id: 3,
+                    name: 'Creative',
+                    img: '/img/img-creative.2253e3b0.png',
+                    price: '95',
+                    category: 'privilegesItem',
+                },
+                {
+                    id: 4,
+                    name: 'Admin',
+                    img: '/img/img-admin.c3d65d0e.png',
+                    price: '120',
+                    category: 'privilegesItem',
+                },
+                {
+                    id: 5,
+                    name: 'Vip',
+                    img: "/img/img-vip.9120969a.png",
+                    price: '35',
+                    category: 'privilegesItem',
+                },
+                {
+                    id: 6,
+                    name: 'Premium',
+                    img: '/img/img-premium.44dda750.png',
+                    price: '70',
+                    category: 'privilegesItem',
+                },
+                {
+                    id: 7,
+                    name: 'Creative',
+                    img: '/img/img-creative.2253e3b0.png',
+                    price: '95',
+                    category: 'privilegesItem',
+                },
+                {
+                    id: 8,
+                    name: 'Admin',
+                    img: '/img/img-admin.c3d65d0e.png',
+                    price: '120',
+                    category: 'privilegesItem',
+                },
+                {
+                    id: 9,
+                    name: 'Кейс Пандоры',
+                    img: '/img/img-admin.c3d65d0e.png',
+                    price: '50',
+                    category: 'casesItem',
+                },
+                {
+                    id: 10,
+                    name: 'Титул Бамбук',
+                    img: '/img/img-admin.c3d65d0e.png',
+                    price: '100',
+                    category: 'titlesItem',
+                },
+                {
+                    id: 11,
+                    name: 'Игровая валюта',
+                    img: '/img/img-admin.c3d65d0e.png',
+                    price: '90',
+                    category: 'otherItem',
+                },
+                {
+                    id: 12,
+                    name: 'Мусор',
+                    img: '/img/img-admin.c3d65d0e.png',
+                    price: '20',
+                    category: 'otherItem',
+                },
+            ],
+            filtersCatalog: [
+                {
+                    id: 'privileges',
+                    name: 'Привилегии',
+                },
+                {
+                    id: 'cases',
+                    name: 'Кейсы',
+                },
+                {
+                    id: 'titles',
+                    name: 'Титулы',
+                },
+                {
+                    id: 'other',
+                    name: 'Прочее',
+                },
+            ],
+        }
+    },
+    mounted(){
+        let categoryItem = document.querySelectorAll('.catalog_listen_items')
+        let privileges = document.querySelectorAll('#privilegesItem')
+        let buttonPrivileges = document.getElementById('privileges')
+
+        for(let i = 0; i < categoryItem.length; i++){
+            categoryItem[i].style.display = 'none'
+        }
+
+        for(let i = 0; i < privileges.length; i++){
+            privileges[i].style.display = 'block'
+            privileges[i].style.opacity = 1
+        }
+        buttonPrivileges.classList.add('ActiveClassButton')
+    },
+    methods: {
+        buttonCategory(id) {
+            let privileges = document.querySelectorAll('#privilegesItem')
+            let cases = document.querySelectorAll('#casesItem')
+            let titles = document.querySelectorAll('#titlesItem')
+            let other = document.querySelectorAll('#otherItem')
+            let buttonPrivileges = document.getElementById('privileges')
+            let buttonCases = document.getElementById('cases')
+            let buttonTitles = document.getElementById('titles')
+            let buttonOther = document.getElementById('other')
+
+            if(id === 'privileges'){
+                for(let i = 0; i < privileges.length; i++){
+                    setTimeout(() => {
+                        privileges[i].style.display = 'block'
+                    }, 85)
+                    setTimeout(() => {
+                       privileges[i].style.opacity = 1
+                    }, 100)
+                    
+                }
+                for(let i = 0; i < cases.length; i++){
+                    cases[i].style.opacity = 0
+
+                    setTimeout(() => {
+                       cases[i].style.display = 'none'
+                    }, 70)
+                }
+                for(let i = 0; i < titles.length; i++){
+                    titles[i].style.opacity = 0
+
+                    setTimeout(() => {
+                       titles[i].style.display = 'none'
+                    }, 70)
+                    
+                }
+                for(let i = 0; i < other.length; i++){
+                    other[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        other[i].style.display = 'none'
+                    }, 70)    
+                }
+                buttonPrivileges.classList.add('ActiveClassButton')
+                buttonCases.classList.remove('ActiveClassButton')
+                buttonTitles.classList.remove('ActiveClassButton')
+                buttonOther.classList.remove('ActiveClassButton')
+            } else if(id === 'cases'){
+                for(let i = 0; i < cases.length; i++){
+                    setTimeout(() => {
+                       cases[i].style.display = 'block'
+                    }, 85)
+                    setTimeout(() => {
+                       cases[i].style.opacity = 1
+                    }, 100)
+                }
+                for(let i = 0; i < privileges.length; i++){
+                    privileges[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        privileges[i].style.display = 'none'
+                    }, 70)
+                }
+                for(let i = 0; i < titles.length; i++){
+                    titles[i].style.opacity = 0
+
+                    setTimeout(() => {
+                       titles[i].style.display = 'none'
+                    }, 70)
+                }
+                for(let i = 0; i < other.length; i++){
+                    other[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        other[i].style.display = 'none'
+                    }, 70)    
+                }
+                buttonPrivileges.classList.remove('ActiveClassButton')
+                buttonCases.classList.add('ActiveClassButton')
+                buttonTitles.classList.remove('ActiveClassButton')
+                buttonOther.classList.remove('ActiveClassButton')
+            } else if(id === 'titles'){
+                buttonPrivileges.classList.remove('ActiveClassButton')
+                buttonCases.classList.remove('ActiveClassButton')
+                buttonTitles.classList.add('ActiveClassButton')
+                buttonOther.classList.remove('ActiveClassButton')
+                for(let i = 0; i < titles.length; i++){
+                    setTimeout(() => {
+                       titles[i].style.display = 'block'
+                    }, 85)
+                    setTimeout(() => {
+                       titles[i].style.opacity = 1
+                    }, 100)
+                }
+                for(let i = 0; i < privileges.length; i++){
+                    privileges[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        privileges[i].style.display = 'none'
+                    }, 70)
+                }
+                for(let i = 0; i < cases.length; i++){
+                    cases[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        cases[i].style.display = 'none'
+                    }, 70)
+                }
+                for(let i = 0; i < other.length; i++){
+                    other[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        other[i].style.display = 'none'
+                    }, 70)    
+                }
+            } else {
+                for(let i = 0; i < other.length; i++){
+                    setTimeout(() => {
+                       other[i].style.display = 'block'
+                    }, 85)
+                    setTimeout(() => {
+                       other[i].style.opacity = 1
+                    }, 100)
+                }
+                for(let i = 0; i < privileges.length; i++){
+                    privileges[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        privileges[i].style.display = 'none'
+                    }, 70)
+                }
+                for(let i = 0; i < cases.length; i++){
+                    cases[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        cases[i].style.display = 'none'
+                    }, 70)
+                }
+                for(let i = 0; i < titles.length; i++){
+                    titles[i].style.opacity = 0
+
+                    setTimeout(() => {
+                        titles[i].style.display = 'none'
+                    }, 70)    
+                }
+                buttonPrivileges.classList.remove('ActiveClassButton')
+                buttonCases.classList.remove('ActiveClassButton')
+                buttonTitles.classList.remove('ActiveClassButton')
+                buttonOther.classList.add('ActiveClassButton')
+            }
+        }
     }
   }
   </script>
 
 <style lang="sass" scoped>
+    .ActiveClassButton
+        border-bottom: 11px solid !important
+        border-image-source: linear-gradient(90deg, #FFDD00, #FBB034) !important
+        border-image-slice: 1 !important
+        transition: 0 !important
     .catalog
         background-color: #F3F3F3
         padding-bottom: 80px
+        min-height: calc(100vh - 185px)
         &_block
             background: #fff
             height: 118px
@@ -92,6 +347,8 @@
                 margin-top: 40px
                 max-width: 1170px
                 display: flex
+                opacity: 0
+                transition: 0.2s
                 &_product
                     background: #fff
                     width: 270px
@@ -104,6 +361,7 @@
                         font-family: 'Montserrat-bold'
                         margin-top: 20px
                         text-align: center
+                        text-transform: uppercase
                     &_image
                         display: block
                         margin-top: 17px
@@ -120,7 +378,6 @@
                         font-size: 12px
                         text-transform: uppercase
                         display: none
-
 //Адаптив                
 @media (max-width: 850px)
     .catalog
