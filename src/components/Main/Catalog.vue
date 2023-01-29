@@ -8,9 +8,14 @@
         <div class="catalog_listen">
             <div class="catalog_listen_items" :id="CatalogItem.category" v-for="CatalogItem in Catalog" :key="CatalogItem.id">
                 <div class="catalog_listen_items_product">
-                    <p class="catalog_listen_items_product_name">{{ CatalogItem.name }}</p>
-                    <img class="catalog_listen_items_product_image" :src="CatalogItem.img" alt="Товар">
-                    <p class="catalog_listen_items_product_price">{{ CatalogItem.price }} руб.</p>
+                    <img class="catalog_listen_items_product_image adaptiv" :src="CatalogItem.img" alt="Товар">
+                    <p class="catalog_listen_items_product_name no-adaptiv">{{ CatalogItem.name }}</p>
+                    <img class="catalog_listen_items_product_image no-adaptiv" :src="CatalogItem.img" alt="Товар">
+                    <p class="catalog_listen_items_product_price no-adaptiv">{{ CatalogItem.price }} руб.</p>
+                    <div>
+                        <p class="catalog_listen_items_product_name adaptiv">{{ CatalogItem.name }}</p>
+                        <p class="catalog_listen_items_product_price adaptiv">{{ CatalogItem.price }} руб.</p>
+                    </div>
                     <p class="catalog_listen_items_product_info">подробнее</p>
                 </div>
             </div>
@@ -32,7 +37,7 @@
                     id: 1,
                     name: 'Vip',
                     img: "/img/img-vip.9120969a.png",
-                    price: '35',
+                    price: '99999999',
                     category: 'privilegesItem',
                 },
                 {
@@ -147,6 +152,10 @@
             privileges[i].style.opacity = 1
         }
         buttonPrivileges.classList.add('ActiveClassButton')
+
+        if(screen.width <= 639) {
+            document.getElementById('titlesItem').id = 'otherItem'
+        }
     },
     methods: {
         buttonCategory(id) {
@@ -309,6 +318,8 @@
         border-image-source: linear-gradient(90deg, #FFDD00, #FBB034) !important
         border-image-slice: 1 !important
         transition: 0 !important
+    .adaptiv
+        display: none !important
     .catalog
         background-color: #F3F3F3
         padding-bottom: 80px
@@ -338,17 +349,20 @@
                 &_btn
                     margin-left: 80px
         &_listen
-            max-width: 1170px
+            max-width: 1200px
             display: flex
             flex-wrap: wrap
-            margin: 0 auto
+            margin: auto
+            margin-top: 80px
+            justify-content: center
+
             &_items
-                margin: 0 auto
-                margin-top: 40px
-                max-width: 1170px
+                max-width: 1200px
                 display: flex
                 opacity: 0
                 transition: 0.2s
+                cursor: pointer
+                margin: 15px
                 &_product
                     background: #fff
                     width: 270px
@@ -357,7 +371,7 @@
                     align-items: center
                     flex-direction: column
                     &_name
-                        font-size: 20px
+                        font-size: 24px
                         font-family: 'Montserrat-bold'
                         margin-top: 20px
                         text-align: center
@@ -368,11 +382,12 @@
                     &_price
                         font-size: 16px
                         text-align: center
-                        margin-top: 207px
-                        position: absolute
+                        margin-top: 17px
+                        border-radius: 5px
                         font-family: 'Montserrat-bold'
                         background: linear-gradient(309deg, rgba(251,176,52,1) 0%, rgba(255,221,0,1) 100%)
                         padding: 5px 10px
+                        min-width: 98px
                     &_info
                         font-family: 'Montserrat-regular'
                         font-size: 12px
@@ -385,65 +400,77 @@
             padding-left: 20px
             padding-right: 20px
                 
-@media (max-width: 605px)
+@media (max-width: 639px)
+    #titles
+        display: none
+    .no-adaptiv
+        display: none
+    .adaptiv
+        display: block !important
     .catalog
+        background: #D9D9D9
         &_block
             &_nav
-                #titles
-                    display: none
+                button
+                    margin-right: 20px
+                    margin-left: 20px
         &_listen
             &_items
+                width: 100%
+                margin-top: 12.5px
+                margin-bottom: 12.5px
+                height: 115px
                 &_product
-                    width: 450px
-                    height: 150px
+                    width: auto
+                    height: 115px
                     display: flex
-                    align-items: center
                     flex-direction: row
-                    justify-content: space-between
-                    padding-left: 15px
-                    padding-right: 15px
-                    &_name
-                        margin-top: -30px
-                        margin-left: 175px
+                    border-radius: 9px
+                    padding-left: 10px
+                    padding-right: 10px
                     &_image
+                        width: 124px
+                        height: 95px
                         margin-top: 0px
-                        position: absolute
-                        order: -1
-                        width: 155px
-                    &_price
-                        margin-top: 32px
-                        margin-left: 175px
                     &_info
                         display: block
-
-@media (max-width: 520px)
+                        margin-left: auto
+                        margin-right: 20px
+                    &_name
+                        margin-top: 0px
+                        text-align: left
+                    &_price
+                        margin-top: 5px
+                        min-width: 68px
+                        border-radius: 0px
+                    div
+                        margin-left: 10px
+                        display: flex
+                        flex-direction: column
+                        align-items: flex-start
+@media (max-width: 468px)
     .catalog
-        &_block
-            display: block
-            &_nav
-                #case
-                    display: none
         &_listen
-            display: block
-
-@media (max-width: 440px)
-    .catalog
-        &_listen
+            padding-left: 10px
+            padding-right: 10px
             &_items
+                margin-left: 0px
+                margin-right: 0px
                 &_product
                     &_info
-                        display: none
-
-@media (max-width: 350px)
-    .catalog
-        &_listen
-            &_items
-                &_product
+                        font-weight: 400
+                        font-size: 10px
+                        line-height: 12px
+                        margin-right: 5px
                     &_name
-                        margin-left: 150px
+                        font-weight: 700
+                        font-size: 17px
+                        line-height: 21px
                     &_price
-                        margin-left: 150px
-                    &_image
-                        margin-left: -15px
+                        font-weight: 500
+                        font-size: 13px
+                        line-height: 16px
+                    div
+                        margin-left: 0px
 </style>
 

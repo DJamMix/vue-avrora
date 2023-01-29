@@ -3,21 +3,35 @@
         <div class="banner_banner-block">
             <div class="banner_banner-block_text-and-button">
                 <h1>Начни свой новый путь во влесенной легендарного Minecraft</h1>
-                <button>Начать играть</button>
+                <button @click="showStartPlayModal">Начать играть</button>
             </div>
             <div class="banner_banner-block_online-players">
                 <h2>Онлайн</h2>
                 <p>0/0 игроков</p>
             </div>
         </div>
+
+        <StartPlayModal ref="modal"></StartPlayModal>
     </section>
 </template>
 
 <script>
+import StartPlayModal from '../ModalWindows/StartPlayModal.vue';
+
 export default {
     name: 'Banner',
     components: {
-  }
+        StartPlayModal,
+    },
+    methods: {
+        showStartPlayModal: function () {
+            this.$refs.modal.show = true
+
+            setTimeout(() => {
+                document.getElementById('shadowModal').style.opacity = 1
+            }, 100)
+        }
+    }
 }
 </script>
 

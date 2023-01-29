@@ -75,6 +75,9 @@
     opacity: 0.7;
     transition: 0.2s;
 }
+.nav_pers-account-block{
+    display: none;
+}
 .nav_pers-account-block_link{
     background-color: #1BD850;
     display: flex;

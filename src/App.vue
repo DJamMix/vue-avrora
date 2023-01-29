@@ -18,6 +18,9 @@
         <p class="nav_pers-account-block_link_content">Личный кабинет</p>
       </a>
     </div>
+    <div class="nav_menu">
+        <a class="nav_menu_item-btn" href="#"><img src="./assets/img/icon-menu.svg" alt="Меню"></a>
+    </div>
   </nav>
   <body>
     <main>
@@ -50,13 +53,13 @@
 
 <script>
 import Banner from './components/Main/Banner.vue'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default {
   components: {
-    Banner
+    Banner,
   },
+  methods: {
+  }
 }
 </script>
 

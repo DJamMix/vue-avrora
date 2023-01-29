@@ -177,8 +177,8 @@ export default {
     .faq
         &_questions-answers
             &_question
-                width: 75%
+                width: 90%
             &_answer
-                width: 75%
+                width: 90%
 
 </style>
