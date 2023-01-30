@@ -6,8 +6,8 @@
             </div>
         </div>
         <div class="catalog_listen">
-            <div class="catalog_listen_items" :id="CatalogItem.category" v-for="CatalogItem in Catalog" :key="CatalogItem.id">
-                <div class="catalog_listen_items_product">
+            <div class="catalog_listen_items" :id="CatalogItem.category" v-for="CatalogItem in Products" :key="CatalogItem.id">
+                <div class="catalog_listen_items_product" :id="CatalogItem.id" @click="showProductModal(CatalogItem)">
                     <img class="catalog_listen_items_product_image adaptiv" :src="CatalogItem.img" alt="Товар">
                     <p class="catalog_listen_items_product_name no-adaptiv">{{ CatalogItem.name }}</p>
                     <img class="catalog_listen_items_product_image no-adaptiv" :src="CatalogItem.img" alt="Товар">
@@ -20,25 +20,59 @@
                 </div>
             </div>
         </div>
+
+        <ProductModal
+            ref="modal"
+            @closeModal="closeModal"
+            :visible="Product.visible"
+            :Product="Product"
+        />
+
     </section>
   </template>
   
   <script>
+  import ProductModal from '../ModalWindows/ProductModal.vue'
   
   export default {
     name: 'Catalog',
     components: {
-
+        ProductModal,
     },
     data() {
         return {
-            Catalog: [
+            Products: [
                 {
                     id: 1,
                     name: 'Vip',
                     img: "/img/img-vip.9120969a.png",
                     price: '99999999',
                     category: 'privilegesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 2,
@@ -46,6 +80,31 @@
                     img: '/img/img-premium.44dda750.png',
                     price: '70',
                     category: 'privilegesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 3,
@@ -53,6 +112,31 @@
                     img: '/img/img-creative.2253e3b0.png',
                     price: '95',
                     category: 'privilegesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 4,
@@ -60,6 +144,31 @@
                     img: '/img/img-admin.c3d65d0e.png',
                     price: '120',
                     category: 'privilegesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 5,
@@ -67,6 +176,31 @@
                     img: "/img/img-vip.9120969a.png",
                     price: '35',
                     category: 'privilegesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 6,
@@ -74,6 +208,31 @@
                     img: '/img/img-premium.44dda750.png',
                     price: '70',
                     category: 'privilegesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 7,
@@ -81,6 +240,31 @@
                     img: '/img/img-creative.2253e3b0.png',
                     price: '95',
                     category: 'privilegesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 8,
@@ -88,6 +272,31 @@
                     img: '/img/img-admin.c3d65d0e.png',
                     price: '120',
                     category: 'privilegesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 9,
@@ -95,6 +304,31 @@
                     img: '/img/img-admin.c3d65d0e.png',
                     price: '50',
                     category: 'casesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 10,
@@ -102,6 +336,31 @@
                     img: '/img/img-admin.c3d65d0e.png',
                     price: '100',
                     category: 'titlesItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 11,
@@ -109,6 +368,31 @@
                     img: '/img/img-admin.c3d65d0e.png',
                     price: '90',
                     category: 'otherItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
                 {
                     id: 12,
@@ -116,6 +400,31 @@
                     img: '/img/img-admin.c3d65d0e.png',
                     price: '20',
                     category: 'otherItem',
+                    description: [
+                        {
+                            item: 'Виртуальный сундук - /ec',
+                        },
+                        {
+                            item: 'Виртуальный верстак - /craft',
+                        },
+                        {
+                            item: 'Узнать айди предмета - /id',
+                        },
+                        {
+                            item: 'Зарплата - /salary',
+                        },
+                    ],
+                    additionally: [
+                        {
+                            item: 'Доступен собственный набор: (/kit)',
+                        },
+                        {
+                            item: 'Префикс привелегии: VIP',
+                        },
+                        {
+                            item: 'Доступно аукционов: 6',
+                        },
+                    ],
                 },
             ],
             filtersCatalog: [
@@ -136,6 +445,14 @@
                     name: 'Прочее',
                 },
             ],
+            Product: {
+                id: 1,
+                name: 'ERROR',
+                img: "/img/img-vip.9120969a.png",
+                price: 'ERROR',
+                category: 'privilegesItem',
+                visible: false,
+            },
         }
     },
     mounted(){
@@ -307,6 +624,16 @@
                 buttonTitles.classList.remove('ActiveClassButton')
                 buttonOther.classList.add('ActiveClassButton')
             }
+        },
+        showProductModal: function (data) {
+            this.Product = data
+            this.Product.visible = true
+            setTimeout(() => {
+                document.getElementById('shadowModal').style.opacity = 1
+            }, 100)
+        },
+        closeModal(visible) {
+            this.Product.visible = visible
         }
     }
   }
