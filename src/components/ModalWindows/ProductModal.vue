@@ -56,7 +56,6 @@ export default {
     methods: {
         closeModal: function () {
             this.$emit('closeModal',false)
-            document.getElementById('shadowModal').style.opacity = 0
         },
     }
     

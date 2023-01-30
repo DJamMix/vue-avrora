@@ -633,7 +633,10 @@
             }, 100)
         },
         closeModal(visible) {
-            this.Product.visible = visible
+            document.getElementById('shadowModal').style.opacity = 0
+            setTimeout(() => {
+                this.Product.visible = visible
+            }, 100)
         }
     }
   }
