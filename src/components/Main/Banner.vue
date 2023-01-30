@@ -108,6 +108,7 @@ export default {
                 
 @media (max-width: 850px)
     .banner
+        margin-top: 100px
         padding: 0
         &_banner-block
             padding-left: 15px

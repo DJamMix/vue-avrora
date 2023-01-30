@@ -19,8 +19,23 @@
       </a>
     </div>
     <div class="nav_menu">
-        <a class="nav_menu_item-btn" href="#"><img src="./assets/img/icon-menu.svg" alt="Меню"></a>
+      <div class="nav_menu_burger">
+        <input id="toggle" type="checkbox" />
+        <label class="nav_menu_burger_btn" for="toggle">
+          <span></span>
+        </label>
+        <div class="nav_menu_burger_box">
+          <a class="nav_menu_burger_box_item" href="#">Услуги</a>
+          <a class="nav_menu_burger_box_item" href="#">Правила</a>
+          <div class="nav_menu_burger_box_social">
+            <a class="nav_menu_burger_box_social_icon" href="https://vk.com/nether_studio" target="blank"><img class="nav_menu_burger_box_social_icon_image" src="./assets/img/icon-vk.svg" alt=""></a>
+            <a class="nav_menu_burger_box_social_icon" href="#" target="blank"><img class="nav_menu_burger_box_social_icon_image" src="./assets/img/icon-youtube.svg" alt=""></a>
+            <a class="nav_menu_burger_box_social_icon" href="#" target="blank"><img class="nav_menu_burger_box_social_icon_image" src="./assets/img/icon-discord.svg" alt=""></a> 
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="nav_background-burger"></div>
   </nav>
   <body>
     <main>
@@ -58,14 +73,93 @@ export default {
   components: {
     Banner,
   },
-  methods: {
-  }
 }
 </script>
 
 <style lang="sass" scoped>
 @import "assets/css/style.css"
-
+.nav
+  &_menu
+    display: none
+    &_burger
+      #toggle
+        display: none
+      #toggle:checked ~ &_btn > span
+        transform: rotate(45deg)
+      #toggle:checked ~ &_btn > span::before
+        top: 0
+        transform: rotate(0)
+      #toggle:checked ~ &_btn > span::after
+        top: 0
+        transform: rotate(90deg)
+      #toggle:checked ~ &_box
+        visibility: visible
+        top: 98px
+        display: block
+        border-radius: 0 0 25px 25px
+        border-bottom: 2px solid
+        border-color: #C5C5C5
+      &_btn
+        display: flex
+        align-items: center
+        position: relative
+        width: 26px
+        cursor: pointer
+        z-index: 1
+      &_btn > span,
+      &_btn > span::before,
+      &_btn > span::after
+        display: block
+        position: relative
+        width: 100%
+        height: 2px
+        background-color: #000
+        transition-duration: .25s
+      &_btn > span::before
+        content: ''
+        top: -8px
+      &_btn > span::after
+        content: ''
+        top: 8px
+      &_box
+        display: none
+        position: fixed
+        visibility: hidden
+        left: 0
+        top: -100%
+        width: 100%
+        margin: 0
+        padding-top: 10px
+        padding-bottom: 40px
+        list-style: none
+        background-color: #fff
+        transition-duration: .25s
+        &_item
+          display: block
+          padding: 25px 15px 30px
+          color: #4A4A4A
+          text-align: center
+          font-size: 17px
+          font-family: 'Montserrat-medium'
+          text-decoration: none
+          transition-duration: .25s
+        &_social
+          margin-top: 10px
+          display: flex
+          flex-direction: column
+          align-items: center
+          align-content: center
+          justify-content: center
+          &_icon
+            margin: 15px
+        &_li
+          display: block
+  &_background-burger
+    display: none
+    padding: 20px
+    position: absolute
+    background: linear-gradient(309deg, rgba(251,176,52,1) 0%, rgba(255,221,0,1) 100%)
+    right: 39px
 //Адаптив
 @media (max-width: 1200px) 
   .nav
@@ -78,15 +172,19 @@ export default {
 
 @media (max-width: 850px)
     .nav
+      position: fixed
+      height: 98px
+      width: 100%
+      top: 0
+      align-items: center
+      background: #fff
+      &_background
+        display: block
       &_block-menu, &_social-block, &_pers-account-block_link
         display: none
       &_menu
+        padding-right: 30px
         display: block
-        &_item-btn
-          padding: 7px 9px
-          text-decoration: none
-          background: linear-gradient(309deg, rgba(251,176,52,1) 0%, rgba(255,221,0,1) 100%)
-
     .footer
       &_block-menu, &_social-block
         display: none

@@ -46,7 +46,7 @@
                     id: 1,
                     name: 'Vip',
                     img: "/img/img-vip.9120969a.png",
-                    price: '99999999',
+                    price: '5',
                     category: 'privilegesItem',
                     description: [
                         {
