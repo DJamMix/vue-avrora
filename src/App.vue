@@ -178,7 +178,7 @@ export default {
       top: 0
       align-items: center
       background: #fff
-      &_background
+      &_background-burger
         display: block
       &_block-menu, &_social-block, &_pers-account-block_link
         display: none
