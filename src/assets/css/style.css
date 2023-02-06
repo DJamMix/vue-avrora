@@ -76,7 +76,7 @@
     transition: 0.2s;
 }
 .nav_pers-account-block{
-    display: none;
+    display: block;
 }
 .nav_pers-account-block_link{
     background-color: #1BD850;

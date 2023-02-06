@@ -13,7 +13,7 @@
       <a class="nav_social-block_item" href="#"><img src="./assets/img/icon-discord.svg" alt="Перейти в Discord"></a>
     </div>
     <div class="nav_pers-account-block">
-      <a class="nav_pers-account-block_link" href="#">
+      <a class="nav_pers-account-block_link" href="#" @click="EnableAuthModal">
         <img class="nav_pers-account-block_link_img" src="./assets/img/icon-lk.svg" alt="Личный кабинет">
         <p class="nav_pers-account-block_link_content">Личный кабинет</p>
       </a>
@@ -64,15 +64,30 @@
       </div> 
     </footer>
   </div>
+
+  <AuthModal ref="modal" />
+
 </template>
 
 <script>
 import Banner from './components/Main/Banner.vue'
+import AuthModal from './components/ModalWindows/AuthModal.vue';
 
 export default {
+  name: 'App',
   components: {
     Banner,
+    AuthModal,
   },
+  methods: {
+    EnableAuthModal: function () {
+      this.$refs.modal.show = true
+
+      setTimeout(() => {
+        document.getElementById('ShowAuthModal').style.opacity = 1
+      }, 100)
+    }
+  }
 }
 </script>
 
